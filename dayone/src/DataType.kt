@@ -1,7 +1,7 @@
 
 fun main(){
-    //datatype()
-    bitsOperation()
+    arithmeticOperation()
+    //bitsOperation()
 }
 
 /**
@@ -31,11 +31,11 @@ fun defineData(){
  * int -> Int(32 bits) byte -> Byte(8) short -> Short(16) double -> Double(64) float -> Float(32) long -> Long(64)
  *
  */
-fun datatype(){
+fun arithmeticOperation(){
 
     var result = 0;
     val a:Int = 10;
-    val b:Int = 2;
+    val b:Int = 3;
     /*
    description:Compares this value with the specified value for order.
         Returns zero if this value is equal to the specified other value,
@@ -54,16 +54,63 @@ fun datatype(){
     result=a
     println("a dec: $result ")
 
+    val r = 3..10
+    for ( a in r){
+        result = a.inc()
+        println("inc $result" )
+    }
+
     /*
         description :Divides this value by the other value.
-        等价 a/b
+        a/b
      */
 
     result = a.div(b)
     println("a div b: $result")
 
+    /*
+        description:Subtracts the other value from this value.
+        a-b;
+     */
+    result = a.minus(b)
+    println("a minus b:$result")
 
+    /*
+        description:Adds the other value to this value.
+        a+b;
+     */
+    result = a.plus(b)
+    println("a plus b:$result")
 
+    /*
+        description:Adds the other value to this value.
+        a%b
+     */
+    result = a.rem(b)
+    println("a rem b:$result")
+
+    /*
+        description:Creates a range from this value to the specified other value
+        a..b -> [a,b] ->[a,a+1,a+2,...,b]
+        if(a>b) range is empty
+        else {
+         val intRange = b.rangeTo(a)
+         for (i in intRange){
+            println(i)
+            }
+        }
+
+        //details of Range in unit3
+     */
+    val intRange = b.rangeTo(a)
+    println("range: $intRange")
+
+    /*
+         description:Multiplies this value by the other value.
+         a*b
+     */
+    result =  a.times(b)
+    println("a times: $result")
 
 
 }
@@ -73,7 +120,7 @@ fun datatype(){
  */
 fun bitsOperation(){
     var result = 0
-    val a:Int = -10
+    val a:Int = 10
     val b:Int = 2
 
     /*
@@ -123,15 +170,37 @@ fun bitsOperation(){
                     are used as the shift distance.
                     The shift distance actually used is therefore always in the range 0..31.
 
-                    a.shl(b)-> a向左移b位 范围：0-31
-         analysis：依旧一个字节位 a=0000 1010; a<<2 -> 0010 1000(40)
-                               a=1000 1010; 补码：1111 0110； a<<2 -> 1101 1000；
+                    a.shl(b)-> a向左移b位 范围：0-31 左移不管正负，低位补0
+         analysis：依旧一个字节位(实际32bits) a=0000 1010; a<<2 -> 0010 1000(40)
+                               a=1000 1010; 补码：1111 0110。 a<<2 -> 1101 1000；补码：1010 1000
      */
     result = a.shl(b)
     println("a shl b:$result")
+    /*
+        description：Shifts this value right by the bitCount number of bits,
+                    filling the leftmost bits with copies of the sign bit.
+                    Note that only the five lowest-order bits of the bitCount are used as the shift distance.
+                    The shift distance actually used is therefore always in the range 0..31.
+
+                    a.shr(b) -> a右移b位 范围：0-31 正数补0，负数高位补1
+         analysis: a = 0000 1010; a>>2 -> 0000 0010;
+                   a = 1000 1010; 补码：1111 0110。 a>>2 -> 1111 1101;补码：1000 0011
+     */
     result = a.shr(b)
     println("a shr b:$result")
+    /*
+        description:Shifts this value right by the bitCount number of bits,
+                    filling the leftmost bits with zeros.
+                    Note that only the five lowest-order bits of the bitCount are used as the shift distance.
+                    The shift distance actually used is therefore always in the range 0..31
+
+                    a.ushr(b) -> a右移b位 范围：0-31 用0填充最高位
+         analysis: a = 0000 1010; a>>>2 -> 0000 0010;
+                   a = 1000 0000 0000 0000 0000 0000 0000 1010; 补码：1111 1111 1111 1111 1111 1111 1111 0110。
+                   a>>>2 -> 0011 1111 1111 1111 1111 1111 1111 1101
+     */
     result = a.ushr(b)
     println("a ushr b:$result")
+
 }
 
