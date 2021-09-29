@@ -60,8 +60,8 @@ public class <primitive type> private constructor() : Number()
 |    shl(bitCount: Int): Int    | 有符号左移<<  |
 |    shr(bitCount: Int): Int    | 有符号右移>>  |
 |   ushr(bitCount: Int): Int    | 无符号右移>>> |
-|     and(other: Int): Int      |   与运算and   |
-|      or(other: Int): Int      |   或运算or    |
+|     and(other: Int): Int      |  位与运算and  |
+|      or(other: Int): Int      |  位或运算or   |
 |     xor(other: Int): Int      |  异或运算xor  |
 |          inv(): Int           |  按位取反inv  |
 
@@ -78,8 +78,8 @@ Int之后的表格均为扩展api，未写出可直接参考最开始的模板�
 | api(return <primimitve type>)  |           meaning            |
 | :----------------------------: | :--------------------------: |
 |         not(): Boolean         | 返回相反布尔值；!true =false |
-|  and(other: Boolean): Boolean  |  逻辑与（不执行短路）''&''   |
-|  or(other: Boolean): Boolean   |  逻辑或（不执行短路）''\|''  |
+|  and(other: Boolean): Boolean  |  按位与（不执行短路）''&''   |
+|  or(other: Boolean): Boolean   |  按位或（不执行短路）''\|''  |
 |  xor(other: Boolean): Boolean  |           异或运算           |
 | compareTo(other: Boolean): Int |             比较             |
 
@@ -97,7 +97,7 @@ A&&B，A = false；不会去计算B的值，直接返回false；只有当A=true�
 |     minus(other: Int): Char     |      a-b:Int;       |
 |           inc(): Char           |        a+'1'        |
 |           dec(): Char           |        a-'1'        |
-| rangeTo(other: Char): CharRange |     [a,b]->a..b     |
+| rangeTo(other: Char): CharRange |     [a,b]=>a..b     |
 |            toXXX:XXX            |    显示类型转换     |
 
 Char类型有几个需要注意的地方：
@@ -107,5 +107,5 @@ Char类型有几个需要注意的地方：
 - 特殊字符的话是用反斜杠开头的，\t,\s;
 - 字符可以使用unicode编码。‘\uFF00'
 
-![](D:\侯磊--工作\Kotlin转义字符.png)
+![](https://github.com/monkeyKing0215/Kotlin/blob/master/Kotlin转义字符.png)
 
