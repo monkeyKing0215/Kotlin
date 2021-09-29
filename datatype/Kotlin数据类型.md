@@ -34,7 +34,7 @@ public class <primitive type> private constructor() : Number()
 |        unaryPlus(): Int        |                     返回本身；return a；                     |
 |       unaryMinus(): Int        |                    返回相反数；return -a;                    |
 | rangeTo(other: Byte): IntRange |                 返回一个区间；return [a,b];                  |
-|           toXXX:XXX            |                    类型转换；return xxx;                     |
+|           toXXX:XXX            |                  显示类型转换；return xxx;                   |
 
 ### Short类型以及相关API
 
@@ -51,7 +51,7 @@ public class <primitive type> private constructor() : Number()
 |        unaryPlus(): Int         |                     返回本身；return a；                     |
 |        unaryMinus(): Int        |                    返回相反数；return -a;                    |
 | rangeTo(other: Short): IntRange |                 返回一个区间；return [a,b];                  |
-|            toXXX:XXX            |                    类型转换；return xxx;                     |
+|            toXXX:XXX            |                  显示类型转换；return xxx;                   |
 
 ### Int类型以及相关API
 
@@ -98,7 +98,7 @@ A&&B，A =false；不会去计算B的值，直接返回false；只有当A=true�
 |           inc(): Char           |        a+'1'        |
 |           dec(): Char           |        a-'1'        |
 | rangeTo(other: Char): CharRange |     [a,b]->a..b     |
-|            toXXX:XXX            |      类型转换       |
+|            toXXX:XXX            |    显示类型转换     |
 
 Char类型有几个需要注意的地方：
 
@@ -106,4 +106,6 @@ Char类型有几个需要注意的地方：
 - 字符的表示：'a'
 - 特殊字符的话是用反斜杠开头的，\t,\s;
 - 字符可以使用unicode编码。‘\uFF00'
+
+![](D:\侯磊--工作\Kotlin转义字符.png)
 
