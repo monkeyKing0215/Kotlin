@@ -1,7 +1,10 @@
+import kotlin.math.absoluteValue
 
 fun main(){
     arithmeticOperation()
     //bitsOperation()
+    Boolean
+    Char
 }
 
 /**
@@ -25,6 +28,7 @@ fun defineData(){
     println(value)
 }
 
+
 /**
  * kotlin中的数据类型和java的区别
  * kotlin中数据类型的一些常用api
@@ -34,7 +38,7 @@ fun defineData(){
 fun arithmeticOperation(){
 
     var result = 0;
-    val a:Int = 10;
+    val a:Int = -10;
     val b:Int = 3;
     /*
    description:Compares this value with the specified value for order.
@@ -112,7 +116,7 @@ fun arithmeticOperation(){
     result =  a.times(b)
     println("a times: $result")
 
-
+    println("abs a: ${a.absoluteValue}")
 }
 
 /**
@@ -201,6 +205,8 @@ fun bitsOperation(){
      */
     result = a.ushr(b)
     println("a ushr b:$result")
+
+
 
 }
 
