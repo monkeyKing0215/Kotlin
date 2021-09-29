@@ -21,7 +21,7 @@ public class <primitive type> private constructor() : Number()
 
 ### Byte类型以及相关API
 
-|              name              |                           meaning                            |
+| name(return <primimitve type>) |                meaning(val a:Byte,val b:Byte)                |
 | :----------------------------: | :----------------------------------------------------------: |
 |  compareTo(other: Byte): Int   | 比较；if (a == b) return 0;if(a < b) return -1; if(a > b) return 1; |
 |     plus(other: Byte): Int     |                      加法；return a+b;                       |
@@ -34,11 +34,11 @@ public class <primitive type> private constructor() : Number()
 |        unaryPlus(): Int        |                     返回本身；return a；                     |
 |       unaryMinus(): Int        |                    返回相反数；return -a;                    |
 | rangeTo(other: Byte): IntRange |                 返回一个区间；return [a,b];                  |
-|           ToXXX:XXX            |                    类型转换；return xxx;                     |
+|           toXXX:XXX            |                    类型转换；return xxx;                     |
 
 ### Short类型以及相关API
 
-|              name               |                           meaning                            |
+| name(return <primimitve type>)  |               meaning(val a:Short,val b:Short)               |
 | :-----------------------------: | :----------------------------------------------------------: |
 |  compareTo(other: Short): Int   | 比较；if (a == b) return 0;if(a < b) return -1; if(a > b) return 1; |
 |     plus(other: Short): Int     |                      加法；return a+b;                       |
@@ -51,19 +51,19 @@ public class <primitive type> private constructor() : Number()
 |        unaryPlus(): Int         |                     返回本身；return a；                     |
 |        unaryMinus(): Int        |                    返回相反数；return -a;                    |
 | rangeTo(other: Short): IntRange |                 返回一个区间；return [a,b];                  |
-|            ToXXX:XXX            |                    类型转换；return xxx;                     |
+|            toXXX:XXX            |                    类型转换；return xxx;                     |
 
 ### Int类型以及相关API
 
-|           name           |    meaning    |
-| :----------------------: | :-----------: |
-| shl(bitCount: Int): Int  | 有符号左移<<  |
-| shr(bitCount: Int): Int  | 有符号右移>>  |
-| ushr(bitCount: Int): Int | 无符号右移>>> |
-|   and(other: Int): Int   |   与运算and   |
-|   or(other: Int): Int    |   或运算or    |
-|   xor(other: Int): Int   |  异或运算xor  |
-|        inv(): Int        |  按位取反inv  |
+| name(return <primimitve type>) |    meaning    |
+| :----------------------------: | :-----------: |
+|    shl(bitCount: Int): Int     | 有符号左移<<  |
+|    shr(bitCount: Int): Int     | 有符号右移>>  |
+|    ushr(bitCount: Int): Int    | 无符号右移>>> |
+|      and(other: Int): Int      |   与运算and   |
+|      or(other: Int): Int       |   或运算or    |
+|      xor(other: Int): Int      |  异或运算xor  |
+|           inv(): Int           |  按位取反inv  |
 
 ### Float类型以及相关API
 
@@ -75,7 +75,7 @@ Int之后的表格均为扩展api，未写出可直接参考最开始的模板�
 
 ## 2.Boolean类型
 
-|              name              |           meaning            |
+| name(return <primimitve type>) |           meaning            |
 | :----------------------------: | :--------------------------: |
 |         not(): Boolean         | 返回相反布尔值；!true =false |
 |  and(other: Boolean): Boolean  |     逻辑与（不执行短路）     |
@@ -86,4 +86,24 @@ Int之后的表格均为扩展api，未写出可直接参考最开始的模板�
 Java中的短路操作是指：
 
 A&&B，A =false；不会去计算B的值，直接返回false；只有当A=true时，才会计算B值
+
+## 3.Char类型
+
+| name(return <primimitve type>)  | meaning(val a:Char) |
+| :-----------------------------: | :-----------------: |
+|   compareTo(other: Char): Int   | 和一个char字符比较  |
+|     plus(other: Int): Char      |     a + b:Int;      |
+|     minus(other: Char): Int     |     a - b:Char;     |
+|     minus(other: Int): Char     |      a-b:Int;       |
+|           inc(): Char           |        a+'1'        |
+|           dec(): Char           |        a-'1'        |
+| rangeTo(other: Char): CharRange |     [a,b]->a..b     |
+|            toXXX:XXX            |      类型转换       |
+
+Char类型有几个需要注意的地方：
+
+- 不能直接和数字做类型转换，可以采用他们的unicode码的相对差做转换
+- 字符的表示：'a'
+- 特殊字符的话是用反斜杠开头的，\t,\s;
+- 字符可以使用unicode编码。‘\uFF00'
 
