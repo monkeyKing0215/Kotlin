@@ -3,8 +3,7 @@ import kotlin.math.absoluteValue
 fun main(){
     arithmeticOperation()
     //bitsOperation()
-    Boolean
-    Char
+
 }
 
 /**
@@ -117,6 +116,8 @@ fun arithmeticOperation(){
     println("a times: $result")
 
     println("abs a: ${a.absoluteValue}")
+
+    println("a unaryminus: ${a.unaryMinus()} a unaryplus: ${a.unaryPlus()}")
 }
 
 /**
