@@ -1,6 +1,11 @@
 fun main(){
+    //logicOperation()
+   differenceOfAnd()
+}
+
+fun logicOperation(){
     val a:Boolean = false
-    val b:Boolean = true
+    val b:Boolean = false
     var result :Boolean
 
     /*
@@ -27,21 +32,88 @@ fun main(){
         ' || ' => 逻辑或（或者）
         ' && ' => 逻辑与（并且）
         ' ! ' => 逻辑非（取反）
+        !!是否进行了短路操作
      */
     if (a || b) {
         result = a || b
         println("a || b => $result")
     }
 
-    if (a && b) {
-        result = a && b
-        println("a&&b => $result")
-    }
+//    if (a && b) {
+//        result = a && b
+//        println("a&&b => $result")
+//    }
 
+
+    result=a&&b;
+    println("a&&b =>$result")
     result = !a
     println("not a => $result")
 
     result = !b
     println("not b => $result")
+}
 
+/**
+ * 探究逻辑与（&）和短路与（&&）的关系
+ * 口诀大法：全真即真，全假为假，一假即假
+ */
+fun differenceOfAnd(){
+    val a = true
+    var b=2
+    var c=2
+    val d = false
+    var e=2
+    var f=2
+
+    if (a.and(b++>0)){
+        println("beautiful girl")
+    }else{
+        println("handsome boy")
+    }
+    if (a &&(c++>0)){
+        println("beautiful girl")
+    }else{
+        println("handsome boy")
+    }
+
+    println("b: $b")
+    println("c: $c")
+    /*
+     a=true,b=c=2;
+     输出:漂亮妹妹，漂亮妹妹;b=c=3
+     analysis：
+        b=3,漂亮妹妹==>condition=true，condition执行完毕?;
+        c=3,漂亮妹妹==>condition=true,condition执行完毕?；
+     */
+
+    if (d.and(e++>0)){
+        println("beautiful girl")
+    }else{
+        println("handsome boy")
+    }
+    if (d &&(f++>0)){
+        println("beautiful girl")
+    }else{
+        println("handsome boy")
+    }
+
+    println("e: $e")
+    println("f: $f")
+    /*
+     d=true,e=f=2;
+     输出：帅气哥哥，帅气哥哥;e=3,f=2
+     analysis:
+        e=3,帅气哥哥==>condition=false,condition全部执行完毕；
+        f=2,帅气哥哥==>condition=false,condition并未执行完毕;
+     */
+
+    /**
+     * 综述：当执行短路与（&&）时，遇到false，会立即中断执行
+     *      当执行逻辑与（&）时，程序依旧会跑完
+     *
+     *     同理：1.&& &
+     *          2.|| |
+     *        
+     */
 }
