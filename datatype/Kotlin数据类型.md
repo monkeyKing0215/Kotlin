@@ -2,6 +2,14 @@
 
 ## 1.Number数据类型
 
+Kotlin中Number类是所有数值类型的父类。
+
+以下的几个数据类型都可以看到: 
+
+``` Kotlin 
+public class <primitive type> private constructor() : Number()
+```
+
 | 基本类型 |                             备注                             |
 | :------: | :----------------------------------------------------------: |
 |   Byte   |                      8bites（-128-127）                      |
@@ -52,13 +60,30 @@
 | shl(bitCount: Int): Int  | 有符号左移<<  |
 | shr(bitCount: Int): Int  | 有符号右移>>  |
 | ushr(bitCount: Int): Int | 无符号右移>>> |
-|   and(other: Int): Int   |    与运算     |
-|   or(other: Int): Int    |    或运算     |
-|   xor(other: Int): Int   |   异或运算    |
-|        inv(): Int        |   按位取反    |
+|   and(other: Int): Int   |   与运算and   |
+|   or(other: Int): Int    |   或运算or    |
+|   xor(other: Int): Int   |  异或运算xor  |
+|        inv(): Int        |  按位取反inv  |
 
 ### Float类型以及相关API
 
 ### Double类型以及相关API
 
+
+
 Int之后的表格均为扩展api，未写出可直接参考最开始的模板！
+
+## 2.Boolean类型
+
+|              name              |           meaning            |
+| :----------------------------: | :--------------------------: |
+|         not(): Boolean         | 返回相反布尔值；!true =false |
+|  and(other: Boolean): Boolean  |     逻辑与（不执行短路）     |
+|  or(other: Boolean): Boolean   |     逻辑或（不执行短路）     |
+|  xor(other: Boolean): Boolean  |           异或运算           |
+| compareTo(other: Boolean): Int |             比较             |
+
+Java中的短路操作是指：
+
+A&&B，A =false；不会去计算B的值，直接返回false；只有当A=true时，才会计算B值
+

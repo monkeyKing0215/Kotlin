@@ -37,7 +37,7 @@ fun defineData(){
 fun arithmeticOperation(){
 
     var result = 0;
-    val a:Int = -10;
+    val a:Int = 10;
     val b:Int = 3;
     /*
    description:Compares this value with the specified value for order.
@@ -57,11 +57,11 @@ fun arithmeticOperation(){
     result=a
     println("a dec: $result ")
 
-    val r = 3..10
-    for ( a in r){
-        result = a.inc()
-        println("inc $result" )
-    }
+//    val r = 3..10
+//    for ( a in r){
+//        result = a.inc()
+//        println("inc $result" )
+//    }
 
     /*
         description :Divides this value by the other value.
@@ -115,9 +115,31 @@ fun arithmeticOperation(){
     result =  a.times(b)
     println("a times: $result")
 
-    println("abs a: ${a.absoluteValue}")
+    /*
+        description:Returns the negative of this value.
+        -a
+     */
+    result = a.unaryMinus()
+    println("a unaryminus: $result")
 
-    println("a unaryminus: ${a.unaryMinus()} a unaryplus: ${a.unaryPlus()}")
+    /*
+         description:Returns this value
+         a
+     */
+    result = a.unaryPlus()
+    println(" a unaryplus: $result")
+
+
+    val byte = a.toByte()
+    println("to byte: $byte")
+    val short = a.toShort()
+    println("to short:$short")
+    val float = a.toFloat()
+    println("to float:$float")
+    val double = a.toDouble()
+    println("to double$double")
+    val long = a.toLong()
+    println("to long:$long")
 }
 
 /**
