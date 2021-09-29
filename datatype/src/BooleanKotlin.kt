@@ -1,7 +1,7 @@
 fun main(){
-    val a:Boolean = true
-    val b:Boolean = false
-    var result = false
+    val a:Boolean = false
+    val b:Boolean = true
+    var result :Boolean
 
     /*
         关于’或，异或，与‘运算分析参考NumberKotlin中的fun bitsOperation()
@@ -20,4 +20,28 @@ fun main(){
 
     val int =a.compareTo(b)
     println("a compare:$int")
+
+
+    /*
+     操作运算符
+        ' || ' => 逻辑或（或者）
+        ' && ' => 逻辑与（并且）
+        ' ! ' => 逻辑非（取反）
+     */
+    if (a || b) {
+        result = a || b
+        println("a || b => $result")
+    }
+
+    if (a && b) {
+        result = a && b
+        println("a&&b => $result")
+    }
+
+    result = !a
+    println("not a => $result")
+
+    result = !b
+    println("not b => $result")
+
 }
