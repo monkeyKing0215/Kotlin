@@ -35,6 +35,8 @@ fun dataTypeConversion(){
  *  notice:kotlin中的string类并没有一些功能函数去调用。
  *         最简单的方式去查看StringsJVM.kt文件，底层还是调用java的方法
  *         path：kotlin-stdlib.jar -> kotlin -> text -> stringsJVM.kt
+ *
+ *
  */
 fun stringOperation(){
     val str: String = "123456789"

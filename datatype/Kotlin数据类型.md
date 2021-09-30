@@ -108,3 +108,8 @@ Char类型有几个需要注意的地方：
 - 字符可以使用unicode编码。‘\uFF00'
 
 ![](https://github.com/monkeyKing0215/Kotlin/blob/master/Kotlin转义字符.png)
+
+## 4.数据类型转换与String类型的常用操作
+| api(return <primitive type>) |meaning(val a:String)|
+| :--------------------------: | :------------------:|
+| | |
