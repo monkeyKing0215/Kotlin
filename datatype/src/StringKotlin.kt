@@ -39,7 +39,7 @@ fun dataTypeConversion(){
  *
  */
 fun stringOperation(){
-    val str: String = "123456789"
+    val str: String = "i am a handsome boy"
     var string: String
 
 
@@ -64,21 +64,44 @@ fun stringOperation(){
     println("str length:$length")
     /**
      *字符串查找：
-     *description:
-     *1.获取第一个元素:first(),first{},firstOrNull(),firstOrNull{};
-     *
+     */
+
+    /*
+      description:
+        获取第一个元素:first(),first{},firstOrNull(),firstOrNull{};
      */
     println("获取第一个元素：${str.first()}") //==>str[0],str.get(0)
-    println("获取第一个元素：${str[0]}")
-    println("获取第一个元素：${str.get(0)}")
-    println("获取第一个元素：${str.first { it=='0' }}")
+    val firstIndex:Int = 0
+    println("获取第一个元素：${str[firstIndex]}")
+    println("获取第一个元素：${str.get(firstIndex)}")
+    println("获取第一个元素：${str.first { it=='a' }}")//有查找的意思，等于某一个字符的第一个元素？？搞不懂有啥意义
     println("获取第一个元素：${str.firstOrNull()}")
-    println("获取第一个元素：${str.firstOrNull { it=='0' }}")
+    println("获取第一个元素：${str.firstOrNull { it=='a' }}")
+
+    /*
+        description：
+          获取最后一个元素：last(),last{},lastOrNull(),lastOrNull{};
+     */
+    println("获取最后一个元素：${str.last()}")
+    val lastIndex: Int = str.length - 1;
+    println("获取最后一个元素：${str.get(lastIndex)}")
+    println("获取最后一个元素：${str[lastIndex]}")
+    println("获取最后一个元素：${str.last { it == 'a' }}")//和first{}一个意思，没明白意思
+    println("获取最后一个元素：${str.lastOrNull()}")
+    println("获取最后一个元素：${str.lastOrNull { it == 'a' }}")
+
+    /*
+        description：
+            获取指定元素下标：find{},findLast{},indexOf(),indexLastOf(),indexOfFirst(),indexOfFirst{}
+     */
+    println("获取元素第一次出现下标：${str.indexOf("0",0)}")
 
     /**
-        字符串替换；
+        字符串替换
+     */
 
-        description:kotlin提供了四个重载函数：
+    /*
+      description:kotlin提供了四个重载函数：
                     1.replace(oldChar,newChar,ignoreCase = false) -->oldChar:需要替换的字符；oldChar：新字符；ignoreCase：是否引用java的replace（）
                     2.replace(oldValue,newValue,ignoreCase = false)-->oldValue:需要替换的字符；oldValue：新字符；ignoreCase：是否引用java的replace（）
                     3.replace(regex,replacement)-->regex:正则表达式；replacement:新的字符串
