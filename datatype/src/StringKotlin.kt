@@ -62,8 +62,20 @@ fun stringOperation(){
      */
     val length = str.length
     println("str length:$length")
+    /**
+     *字符串查找：
+     *description:
+     *1.获取第一个元素:first(),first{},firstOrNull(),firstOrNull{};
+     *
+     */
+    println("获取第一个元素：${str.first()}") //==>str[0],str.get(0)
+    println("获取第一个元素：${str[0]}")
+    println("获取第一个元素：${str.get(0)}")
+    println("获取第一个元素：${str.first { it=='0' }}")
+    println("获取第一个元素：${str.firstOrNull()}")
+    println("获取第一个元素：${str.firstOrNull { it=='0' }}")
 
-    /*
+    /**
         字符串替换；
 
         description:kotlin提供了四个重载函数：
@@ -73,7 +85,9 @@ fun stringOperation(){
                     4.replace(regex: Regex, noinline transform: (MatchResult) -> CharSequence)-->regex:正则表达式；transform:高阶函数;   (不会用，以后学到高阶函数再说！)
      */
 
-    println("第1个重载函数： ${str.replace("1", "猪")}")
-    println("第2个重载函数： ${str.replace(str, "我是只猪")}")
-    println("第3个重载函数： ${str.replace(Regex("[0-9]"), "我是只猪;")}")
+    println("字符串替换： ${str.replace("1", "猪")}")
+    println("字符串替换： ${str.replace(str, "我是只猪")}")
+    println("字符串替换： ${str.replace(Regex("[0-9]"), "我是只猪;")}")
+
+
 }
